@@ -6,10 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { NavbarComponent } from './components/navbar/navbar-component';
 import { HomePageComponent } from './components/home-page-component/home-page-component';
 
+import { theme } from './utils/theme'
+import { ThemeProvider } from '@mui/material/styles';
+import { ProductViewComponent } from './components/product-view/product-view-component';
+
 ReactDOM.render(
   <React.StrictMode>
-    <NavbarComponent />
-    <HomePageComponent />
+    <ThemeProvider theme={theme}>
+      <NavbarComponent />
+      {/* <HomePageComponent /> */}
+      <ProductViewComponent />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

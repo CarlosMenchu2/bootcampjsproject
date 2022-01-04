@@ -11,24 +11,26 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import Badge from '@mui/material/Badge';
 
 //Material Icons
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 // Tema personalizado
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+//import { ThemeProvider } from '@mui/material/styles';
+//import { theme } from '../../utils/theme'
 
 const pages = ['Productos', 'Precio'];
 
 
-const theme = createTheme({
+/*const theme = createTheme({
     palette: {
         neutral:{
             main:'#ECEAEA'
         }
     }
-})
+})*/
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -87,7 +89,7 @@ export const NavbarComponent = () => {
 
 
     return (
-        <ThemeProvider theme={theme}>
+       
             <AppBar position="static" color='neutral' sx={{boxShadow:'none'}}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -156,16 +158,18 @@ export const NavbarComponent = () => {
                             </Button>
                             ))}
                         </Box>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                            >
-                                <AddShoppingCartIcon />
-                        </IconButton>
+                        <Badge badgeContent={4} color="primary">
+                            <IconButton
+                                size="medium"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                                >
+                                    <AddShoppingCartIcon />
+                            </IconButton>
+                        </Badge>
                         <Search>
                             <SearchIconWrapper>
                                 <SearchIcon />
@@ -178,6 +182,6 @@ export const NavbarComponent = () => {
                     </Toolbar>
                 </Container>
             </AppBar>
-        </ThemeProvider>
+    
     )
 }

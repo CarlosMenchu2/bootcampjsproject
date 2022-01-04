@@ -6,6 +6,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+
 // Static Files
 import m1 from '../../assets/img/m1.jpg';
 
@@ -20,17 +22,16 @@ export const CardComponent = () => {
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Camiseta blanca
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                </Typography>
+                <Grid container justifyContent='end'>
+                    <Grid item sx={12}>
+                        <Typography variant="body2" color="text.secondary">
+                            Q 50.00    
+                        </Typography>
+                    </Grid>
+                </Grid>                
             </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
         </Card>
     )
 }

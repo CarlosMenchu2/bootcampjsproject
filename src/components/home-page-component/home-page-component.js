@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 //Static Files
 import image1 from '../../assets/img/image1.png'
 import { CardComponent } from '../card/card-component';
+import { FooterComponent } from '../footer/footer-component';
 
 
 export const HomePageComponent = () => {
@@ -49,7 +50,14 @@ export const HomePageComponent = () => {
                 <img src={image1} alt='intro'/>
             </Grid>
         </Grid>
-        <Container maxWidth='xl' sx={{mt:10}}>
+        <Container maxWidth='xl' sx={{mt:10, mb:10}}>
+            <Typography
+                variant='h4'
+                component='div'
+                sx={{fontWeight:'bold', mb:3.5}}
+            >
+                Nuevos Productos
+            </Typography>
             <Grid container justifyContent='space-between'>
                 <Grid item md={3} xs={12}>
                     <CardComponent />
@@ -65,6 +73,7 @@ export const HomePageComponent = () => {
                 </Grid>
             </Grid>
         </Container>
+        <FooterComponent />
         </>
     )
 }
