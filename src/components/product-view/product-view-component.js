@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import {CardComponent} from '../card/card-component'
+
 //Material UI
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -17,6 +19,7 @@ import m1 from '../../assets/img/m1.jpg';
 
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { FooterComponent } from '../footer/footer-component';
 
 
 const FormBuyComponent = () =>{
@@ -65,6 +68,7 @@ const FormBuyComponent = () =>{
 
 export const ProductViewComponent = () => {
     return (
+        <>
         <Container maxWidth='xl' sx={{mt:5}}>
             <Grid container justifyContent='space-between'>
                 <Grid item container xs={12} md={6} justifyContent='center' >
@@ -100,7 +104,22 @@ export const ProductViewComponent = () => {
                     </Stack>
                 </Grid>
             </Grid>
+            <Grid container justifyContent='space-between' sx={{mt:10,mb:10}}>
+                <Grid item md={3} xs={12}>
+                    <CardComponent />
+                </Grid>
+                <Grid item md={3} xs={12}>
+                    <CardComponent />
+                </Grid>
+                <Grid item md={3} xs={12}>
+                    <CardComponent />
+                </Grid>
+                <Grid item md={3} xs={12}>
+                    <CardComponent />
+                </Grid>
+            </Grid>
         </Container>
-
+        <FooterComponent/>
+        </>
     )
 }

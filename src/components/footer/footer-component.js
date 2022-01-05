@@ -14,7 +14,7 @@ import Link from '@mui/material/Link'
 
 export const FooterComponent = () => {
     return (
-            <AppBar  color='blackFooter' position="static" >
+            <AppBar  color='blackFooter' position="static">
                 <Container maxWidth='xl' sx={{pt:5, pb:3}}>
                     <Grid container justifyContent='space-between'>
                         <Grid item xs={12} md={4}>

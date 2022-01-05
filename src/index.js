@@ -9,13 +9,17 @@ import { HomePageComponent } from './components/home-page-component/home-page-co
 import { theme } from './utils/theme'
 import { ThemeProvider } from '@mui/material/styles';
 import { ProductViewComponent } from './components/product-view/product-view-component';
+import { OrderDetailComponent } from './components/order-detail/order-detail-component';
+import { ProductCatalogComponent } from './components/product-catalog/product-catalog-component';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <NavbarComponent />
       {/* <HomePageComponent /> */}
-      <ProductViewComponent />
+      {/*<ProductViewComponent />*/}
+      {/*<OrderDetailComponent />*/}
+      <ProductCatalogComponent />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
