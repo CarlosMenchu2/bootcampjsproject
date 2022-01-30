@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import { Button, Container, Grid, IconButton, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Box, fontSize } from '@mui/material';
-import { FooterComponent } from '../footer/footer-component';
+// import { FooterComponent } from '../footer/footer-component';
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -74,7 +74,7 @@ const ProductTable = () => {
     )
 }
 
-export const OrderDetailComponent = () => {
+export const OrderDetail = () => {
     return (
         <>
         <Container maxWidth='xl' sx={{mt:10,mb:10}}>
@@ -92,7 +92,7 @@ export const OrderDetailComponent = () => {
                 </Grid>
             </Box>
         </Container>
-        <FooterComponent />
+        {/* <FooterComponent /> */}
         </>
     )
 }

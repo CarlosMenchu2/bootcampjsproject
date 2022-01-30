@@ -6,11 +6,11 @@ import { Typography, Box } from '@mui/material';
 import Container from '@mui/material/Container';
 //Static Files
 import image1 from '../../assets/img/image1.png'
-import { CardComponent } from '../card/card-component';
-import { FooterComponent } from '../footer/footer-component';
+import { CardComponent } from '../../components/card/card-component';
+import { FooterComponent } from '../../components/footer/footer-component';
 
 
-export const HomePageComponent = () => {
+export const HomePage = () => {
     return (
         <>
         <Grid container  alignItems='center' justifyContent='center' sx={{height:'550px', backgroundColor:'#ECEAEA'}}>
@@ -73,7 +73,6 @@ export const HomePageComponent = () => {
                 </Grid>
             </Grid>
         </Container>
-        <FooterComponent />
         </>
     )
 }

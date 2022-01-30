@@ -16,6 +16,7 @@ import Badge from '@mui/material/Badge';
 //Material Icons
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { NavLink } from 'react-router-dom';
 
 // Tema personalizado
 //import { ThemeProvider } from '@mui/material/styles';
@@ -134,7 +135,7 @@ export const NavbarComponent = () => {
                             >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">{page}</Typography>
+                                    <NavLink to='/product'>{page}</NavLink>
                                 </MenuItem>
                             ))}
                             </Menu>
@@ -149,13 +150,15 @@ export const NavbarComponent = () => {
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block' , fontWeight:'bold'}}
-                            >
-                                {page}
-                            </Button>
+                            <NavLink to='/product'>
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'black', display: 'block' , fontWeight:'bold'}}
+                                >
+                                    {page}
+                                </Button>
+                            </NavLink>
                             ))}
                         </Box>
                         <Badge badgeContent={4} color="primary">

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {CardComponent} from '../card/card-component'
+import {CardComponent} from '../../components/card/card-component'
 
 //Material UI
 import Container from '@mui/material/Container';
@@ -19,7 +19,7 @@ import m1 from '../../assets/img/m1.jpg';
 
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { FooterComponent } from '../footer/footer-component';
+//import { FooterComponent } from '../footer/footer-component';
 
 
 const FormBuyComponent = () =>{
@@ -66,7 +66,7 @@ const FormBuyComponent = () =>{
 }
 
 
-export const ProductViewComponent = () => {
+export const ProductView = () => {
     return (
         <>
         <Container maxWidth='xl' sx={{mt:5}}>
@@ -119,7 +119,7 @@ export const ProductViewComponent = () => {
                 </Grid>
             </Grid>
         </Container>
-        <FooterComponent/>
+        {/* <FooterComponent/> */}
         </>
     )
 }

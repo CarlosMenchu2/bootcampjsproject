@@ -3,23 +3,38 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { NavbarComponent } from './components/navbar/navbar-component';
-import { HomePageComponent } from './components/home-page-component/home-page-component';
 
 import { theme } from './utils/theme'
 import { ThemeProvider } from '@mui/material/styles';
-import { ProductViewComponent } from './components/product-view/product-view-component';
-import { OrderDetailComponent } from './components/order-detail/order-detail-component';
-import { ProductCatalogComponent } from './components/product-catalog/product-catalog-component';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HomePage } from './routes/home-page/Home-page';
+import { ProductCatalog } from './routes/product-catalog/Product-catalog';
+import { ProductView } from './routes/product-view/Product-view';
+import { OrderDetail } from './routes/order-detail/Order-detail';
+import Dashboard from './routes/dashboard/Dashboard';
+import Login from './routes/login/Login';
+import Forgotpassword from './routes/forgotpassword/Forgotpassword';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <ThemeProvider theme={theme}>
+    
+    </ThemeProvider> */}
     <ThemeProvider theme={theme}>
-      <NavbarComponent />
-      {/* <HomePageComponent /> */}
-      {/*<ProductViewComponent />*/}
-      {/*<OrderDetailComponent />*/}
-      <ProductCatalogComponent />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />}>
+            <Route index element={<HomePage />}/>
+            <Route path='order' element={<OrderDetail />}/>
+            <Route path='product' element={<ProductCatalog />}/>
+            <Route path='product/:id' element={<ProductView />}/>
+            <Route path='admin' element={<Dashboard />}/>
+            <Route path='login' element={<Login />}/>
+            <Route path='forgotpass' element={<Forgotpassword />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
