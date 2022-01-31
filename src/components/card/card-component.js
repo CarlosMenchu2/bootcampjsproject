@@ -10,28 +10,31 @@ import Grid from '@mui/material/Grid';
 
 // Static Files
 import m1 from '../../assets/img/m1.jpg';
+import { Link } from 'react-router-dom';
 
 export const CardComponent = () => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                component="img"
-                height="auto"
-                image={m1}
-                alt="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Camiseta blanca
-                </Typography>
-                <Grid container justifyContent='end'>
-                    <Grid item sx={12}>
-                        <Typography variant="body2" color="text.secondary">
-                            Q 50.00    
-                        </Typography>
-                    </Grid>
-                </Grid>                
-            </CardContent>
-        </Card>
+        <Link to='/product/1' style={{textDecorationLine:'none'}}>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardMedia
+                    component="img"
+                    height="auto"
+                    image={m1}
+                    alt="green iguana"
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        Camiseta blanca
+                    </Typography>
+                    <Grid container justifyContent='end'>
+                        <Grid item sx={12}>
+                            <Typography variant="body2" color="text.secondary">
+                                Q 50.00    
+                            </Typography>
+                        </Grid>
+                    </Grid>                
+                </CardContent>
+            </Card>
+        </Link>
     )
 }

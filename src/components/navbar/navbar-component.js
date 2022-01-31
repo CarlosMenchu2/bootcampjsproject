@@ -16,13 +16,13 @@ import Badge from '@mui/material/Badge';
 //Material Icons
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // Tema personalizado
 //import { ThemeProvider } from '@mui/material/styles';
 //import { theme } from '../../utils/theme'
 
-const pages = ['Productos', 'Precio'];
+const pages = ['Productos'];
 
 
 /*const theme = createTheme({
@@ -94,16 +94,17 @@ export const NavbarComponent = () => {
             <AppBar position="static" color='neutral' sx={{boxShadow:'none'}}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Typography
-                            color='#FF4422'
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontWeight:'bold' }}
-                        >
-                            GUATE <div color='#000'>CLOTHES</div>
-                        </Typography>
-
+                        <Link to='/' style={{textDecorationLine:'none' }}>
+                            <Typography
+                                color='#FF4422'
+                                variant="h6"
+                                noWrap
+                                component="div"
+                                sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontWeight:'bold'}}
+                            >
+                                GUATE <div color='#000'>CLOTHES</div>
+                            </Typography>
+                        </Link>
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                             size="large"
@@ -150,7 +151,7 @@ export const NavbarComponent = () => {
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                            <NavLink to='/product'>
+                            <Link to='/product' style={{textDecorationLine:'none'}}>
                                 <Button
                                     key={page}
                                     onClick={handleCloseNavMenu}
@@ -158,20 +159,22 @@ export const NavbarComponent = () => {
                                 >
                                     {page}
                                 </Button>
-                            </NavLink>
+                            </Link>
                             ))}
                         </Box>
                         <Badge badgeContent={4} color="primary">
-                            <IconButton
-                                size="medium"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleOpenNavMenu}
-                                color="inherit"
-                                >
-                                    <AddShoppingCartIcon />
-                            </IconButton>
+                            <Link to='/order' style={{textDecorationLine:'none', appearance:'none'}}>
+                                <IconButton
+                                    size="medium"
+                                    aria-label="account of current user"
+                                    aria-controls="menu-appbar"
+                                    aria-haspopup="true"
+                                    onClick={handleOpenNavMenu}
+                                    color="inherit"
+                                    >
+                                        <AddShoppingCartIcon />
+                                </IconButton>
+                            </Link>
                         </Badge>
                         <Search>
                             <SearchIconWrapper>

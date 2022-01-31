@@ -6,9 +6,9 @@ import { NavbarComponent } from "./components/navbar/Navbar-component";
 function App() {
   return (
     <>
-      {/*<NavbarComponent />*/}
-      <Outlet />
-      {/*<FooterComponent />*/}
+      <NavbarComponent />
+        <Outlet />
+      <FooterComponent />
     </>
   );
 }
